@@ -18,7 +18,7 @@ Select "internet site" and type in the FQDN of the server (whatever.com) when pr
 
 Now we're going to enable using the "address_pipe" which allows routing emails to scripts:
 
-    echo "SYSTEM_ALIASES_PIPE_TRANSPORT = address_pipe" > /etc/exim4.conf.localmacros
+    echo "SYSTEM_ALIASES_PIPE_TRANSPORT = address_pipe" > /etc/exim4/exim4.conf.localmacros
 
 Because we've made a config change, you have to run:
 
