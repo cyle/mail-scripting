@@ -4,11 +4,11 @@
 
 Sometimes I need to set up a server to process incoming email with a script. Here's how I do it.
 
-Running Ubuntu 14.04 to start with. Make sure your server has a fully qualified domain name and whatnot. The following commands are assumed to be run as root.
+Running Ubuntu 14.04 to start with. Make sure your server has a fully qualified domain name (whatever.com) and whatnot. The following commands are assumed to be run as root.
 
 First, install exim:
 
-   apt-get install exim4
+    apt-get install exim4
 
 Yay, we've installed the exim mail service. Now we need to reconfigure it for our needs:
 
@@ -33,6 +33,8 @@ At the bottom of this, enter something in this format:
     address:|/path/to/script
 
 That means messages to address@whatever.com will be piped to that script as STDIN.
+
+You can change that "address" to whatever you want as long as it doesn't contain any spaces, I believe. Has to resolve into a valid email address.
 
 Make sure `/path/to/script` is `chmod +x` and in a readable folder and anything it refers to has an absolute path.
 
